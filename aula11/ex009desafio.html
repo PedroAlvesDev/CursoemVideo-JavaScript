@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NACIONALIDADE</title>
+    <style>
+        body {
+            background-color: #a1a6a7;
+        }
+
+        input#paisOrig {
+            font: normal sans-serif;
+            background-color: #fdfffd;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Nacionalidade</h1>
+    País de origem <input type="text" name="paisOrig" id="paisOrig">
+    <input type="button" value="Verificar" onclick="origem()">
+
+    <div id="nac"></div>
+
+
+    <script>
+        const pais = 'Brasil';
+
+        function origem() {
+            let paisOrig = document.querySelector('input#paisOrig').value;
+            let nac = document.querySelector('div#nac');
+            
+            nac.innerHTML = "";
+            nac.innerHTML += `<p>Vivendo em ${pais}</p>`
+
+            if (paisOrig != pais) {
+                nac.innerHTML += `<p>Você é Estrangeiro.</p>`
+            } else {
+                nac.innerHTML += `<p>Você é Brasileiro.</p>`
+            };
+        };
+
+    </script>
+</body>
+
+</html>
