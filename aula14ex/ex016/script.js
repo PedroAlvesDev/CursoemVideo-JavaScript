@@ -1,42 +1,33 @@
 function contar() {
-    let i = Number(document.querySelector('input#txti').value);
-    let f = Number(document.querySelector('input#txtf').value);
-    let p = Number(document.querySelector('input#txtp').value);
+    let inicio = document.querySelector('input#inicio');
+    let fim = document.querySelector('input#fim');
+    let passo = document.querySelector('input#passo');
     let res = document.querySelector('div#res');
 
     res.innerHTML = '';
 
-    if (i == '') {
+    if (inicio.value.length == 0 || fim.value.length == 0) {
         res.innerHTML = `Impossível contar!`
-    } else if (f == '') {
-        res.innerHTML = `Impossível contar!`
-    } else if (p == '') {
-        alert('Passo inválido! Considerando PASSO 1');
-        let p = 1;
-        while (i <= f) {
-            console.log(i);
-            res.innerHTML += `${i} \u{1F449} `;
-            i += p
-        };
-        res.innerHTML += `\u{1F3F4}`
-    } else if (i > f) {
-        while (f <= i) {
-            console.log(i);
-            res.innerHTML += `${i} \u{1F449} `;
-            i -= p
-        };
-        res.innerHTML += `\u{1F3F4}`
     } else {
-        while (i <= f) {
-            console.log(i);
-            res.innerHTML += `${i} \u{1F449} `;
-            i += p
+        let i = Number(inicio.value);
+        let f = Number(fim.value);
+        let p = Number(passo.value);
+
+        if (p <= 0) {
+            alert('Impossível contar! Considerando PASSO 1');
+            p = 1;
         };
-        res.innerHTML += `\u{1F3F4}`
+        if (i < f) {
+            for (let c = i; c <= f; c += p) {
+                res.innerHTML += `${c} \u{1F449} `;
+            };
+        } else if (f < i) {
+            for (let c = i; c >= f; c -= p) {
+                res.innerHTML += `${c} \u{1F449} `;
+            };
+        };
+        res.innerHTML += `\u{1F3F4} `
     };
-
 };
-
-
 // res.innerHTML += `${i} \u{1F449} `;
 // res.innerHTML += `\u{1F3F4}`

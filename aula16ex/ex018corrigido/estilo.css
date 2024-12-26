@@ -1,0 +1,29 @@
+body {
+    background: #3579a0;
+    font: normal 15px Arial;
+}
+
+header {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+section {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 10px #0000008c;
+}
+
+#SelNum {
+    width: 150px;
+}
+
+footer {
+    color: #FFFFFF;
+    text-align: center;
+    font-style: italic;
+    margin-top: 15px;
+}
