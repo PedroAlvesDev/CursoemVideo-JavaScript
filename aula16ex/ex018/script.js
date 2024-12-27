@@ -13,6 +13,7 @@ function adicionar() {
         let item = document.createElement('option');
         item.text = `Valor ${n} adicionado.`;
         tab.appendChild(item); 
+        res.innerHTML = '';
     };
     num.value = '';
     num.focus();
@@ -24,16 +25,15 @@ function finalizar() {
     } else {
         let numCad = val.length;
         let maior = Math.max.apply(null, val);
+        let menor = Math.min.apply(null, val);
         let soma = val.reduce((acumulator, valorAtual) => acumulator + valorAtual, 0);
         let media = Number((soma / val.length));
     
-        res.innerHTML += `<p>Ao todo, temos ${numCad} números cadastrados.</p><br>`
-    
-        res.innerHTML += `<p>O maior valor informado foi ${maior}.</p><br>`
-    
-        res.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p><br>`
-    
-        res.innerHTML += `<p>A média dos valores digitados é ${media.toFixed(2)}</p><br>`
+        res.innerHTML += `<p>Ao todo, temos ${numCad} números cadastrados.</p>`
+        res.innerHTML += `<p>O maior valor informado foi ${maior}.</p>`
+        res.innerHTML += `<p>O menor valor informado foi ${menor}.</p>`
+        res.innerHTML += `<p>Somando todos os valores, temos ${soma}.</p>`
+        res.innerHTML += `<p>A média dos valores digitados é ${media.toFixed(2)}</p>`
     };
 };
 
